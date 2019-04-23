@@ -20,6 +20,15 @@ a {
 }
 
 /* layout */
+
+.blogItem {
+  border-bottom: 3px double dodgerblue;
+}
+
+.blogItem:last-of-type {
+  border-bottom: none;
+}
+
 .container {
   padding: 2em;
   max-width: 800px;
@@ -29,6 +38,9 @@ a {
 header {
   background-color: dodgerblue;
   color: #fff;
+  background-size: cover;
+  background-position: center center;
+  min-height: 5vw;
 }
 
 header a {

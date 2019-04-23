@@ -9,7 +9,7 @@
   </head>
 
   <body>
-    <header class="header">
+    <header class="header" style="background-image: url('<?php echo get_template_directory_uri(); ?>/img/milky-way.jpg')">
       <div class="container">
         <a href="<?php echo home_url(); ?>"><h1><?php bloginfo('name'); ?></h1></a>
         <p><?php bloginfo('description'); ?></p>
