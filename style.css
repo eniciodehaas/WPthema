@@ -22,7 +22,7 @@ a {
 /* layout */
 
 .blogItem {
-  border-bottom: 3px double dodgerblue;
+  border-bottom: 3px double #002040;
 }
 
 .blogItem:last-of-type {
@@ -32,22 +32,137 @@ a {
 .container {
   padding: 2em;
   max-width: 800px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container img {
+  max-width: 100%;
 }
 
 header {
-  background-color: dodgerblue;
+  background-color: #002040;
   color: #fff;
   background-size: cover;
   background-position: center center;
   min-height: 5vw;
 }
 
-header a {
+/* opmaak menu */
+nav  {
+  margin-left: -2em;
+  margin-right: -2em;
+  margin-top: -2em;
+}
+
+nav ul.menu {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 1.3em;
+}
+
+nav .menu a {
+  text-decoration: none;
+  display: block;
+  background-color: #002040;
+  padding: .5em 2em;
+  border-bottom: 1px solid #629DD9;
+  border-right: 1px solid #629DD9;
+  border-left: 1px solid #629DD9;
+}
+
+nav .menu a:hover {
+    background-color: #629DD9;
+    background: #629DD9 -webkit-gradient(linear, left top, left bottom, from(#002040), to(#629DD9)) no-repeat;
+    /* Mozilla,Firefox/Gecko */
+    background: #629DD9 -moz-linear-gradient(top, #002040, #629DD9) no-repeat;
+    /* IE 5.5 - 7 */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#002040, endColorstr=#629DD9) no-repeat;
+    /* IE 8 */
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#002040, endColorstr=#002040)" no-repeat;
+}
+
+nav .menu .current-menu-item a {
+  background-color: #629DD9;
+  background: #629DD9 -webkit-gradient(linear, left top, left bottom, from(#002040), to(#629DD9)) no-repeat;
+  /* Mozilla,Firefox/Gecko */
+  background: #629DD9 -moz-linear-gradient(top, #002040, #629DD9) no-repeat;
+  /* IE 5.5 - 7 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#002040, endColorstr=#629DD9) no-repeat;
+  /* IE 8 */
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#002040, endColorstr=#002040)" no-repeat;
+  border-right: .3em solid #639DD9;
+}
+
+/* submenu */
+.sub-menu {
+  list-style-type: none;
+  margin: 0;
+  padding-left: 1em;
+}
+
+.sub-menu * {
+  transition: height .5s ease-out,
+  font-size .5s ease-out,
+  line-height .5s ease-out,
+  padding .5s ease-out,
+  border-width .5s ease-out;
+}
+
+.sub-menu.menu-verbergen {
+  height: 0;
+  font-size: 0;
+  line-height: 0;
+  padding: 0;
+  border-width: 0;
+}
+
+.menu-item-has-children>a::before {
+  content: '\25BC';
+  margin-right: 1em;
+}
+
+.menu-item-has-children>a.menu-open::before {
+  content: '\25B2';
+  margin-right: 1em;
+}
+
+.sub-menu a {
+  border-left: 1px solid #629DD9;
+}
+
+.sub-menu {
+  position: absolute;
+}
+
+
+
+@media screen and (min-width: 800px) {
+  nav ul.menu {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
+  }
+
+  nav ul#menu-footermenu {
+    grid-template-columns: repeat(auto-fill, minmax(10em, 1fr));
+  }
+
+  nav #menu-footermenu a {
+    font-size: .7em;
+  }
+}
+
+
+header a, footer a {
   color: #fff;
 }
 
 footer {
-  background-color: dodgerblue;
+  background-color: #002040;
   color: #fff;
+}
+
+footer nav {
+  margin-bottom: 1em;
 }
