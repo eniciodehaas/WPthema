@@ -6,6 +6,7 @@ Version: 1.0
 
 
 body {
+  font-family: 'Sunflower', sans-serif;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
@@ -46,6 +47,18 @@ header {
   background-size: cover;
   background-position: center center;
   min-height: 5vw;
+}
+
+header p, h1, h2, h3, h4 {
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+header>.container>a {
+  text-decoration: none;
+}
+
+header>.container>a:hover {
+  text-decoration: underline;
 }
 
 /* opmaak menu */
@@ -95,6 +108,17 @@ nav .menu .current-menu-item a {
   border-right: .3em solid #639DD9;
 }
 
+main {
+  display: grid;
+  grid-template-columns: 4fr 1fr;
+  grid-column-gap: 5em;
+}
+
+aside {
+  /* border-right: 1px solid #629DD9; */
+  margin-right: -2em;
+}
+
 /* submenu */
 .sub-menu {
   list-style-type: none;
@@ -136,9 +160,57 @@ nav .menu .current-menu-item a {
   position: absolute;
 }
 
+.zoek-term-in-kop {
+  color: #629DD9;
+}
 
+aside h4 {
+  color: #629DD9;
+}
+
+.screen-reader-text {
+  display: none;
+  color: #629DD9;
+}
+
+.postMetaData {
+  font-size: .8em;
+  color: #aaa;
+}
+
+.postMetaData a {
+  color: #aaa;
+}
+
+.postMetaData a:hover {
+  color: #639DD9;
+}
+
+.postMetaData ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: inline;
+}
+
+.postMetaData li {
+  display: inline;
+}
+
+.postMetaData li::after {
+  content: ' | '
+}
+
+.postMetaData li:last-of-type::after {
+  content: '';
+}
 
 @media screen and (min-width: 800px) {
+  header .container {
+    border-right: 1px solid #629DD9;
+    min-height: 15vw;
+  }
+
   nav ul.menu {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(13em, 1fr));
